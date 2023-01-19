@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+
+    <title>Tip calculator app</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="main-header">
+        <img src="images/logo.svg" alt="Splitter">
+      </div>
+    </header>
+    <main>
+      <form class="form" id="calculator" novalidate autocomplete="off">
+        <div class="input-group__bill" role="group">
+          <label for="bill" class="bill__total">
+            <span>Bill</span>
+            <span class="form__error-message not-visible" 
+              id="bill-input-error"></span>
+          </label>
+          <input class="form__input" type="number" id="bill" name="bill" placeholder="0" aria-invalid="false" aria-describedby="bill-input-error" value="" required>
+        </div>
+        <fieldset class="form__radio-group">
+          <legend class="form__radio-title">Select Tip %</legend>
+          <div class="tip__percent">
+            <span class="form__error-message not-visible"
+              id="customTip-input-error"></span>
+          </div>
+          <div class="radio-input__container">
+            <div class="radio-btn">
+              <input type="radio" id="five-percent" name="tip" value="5">
+              <label for="five-percent">5%</label>
+            </div>
+            <div class="radio-btn">
+              <input type="radio" id="ten-percent" name="tip" value="10">
+              <label for="ten-percent">10%</label>
+            </div>
+            <div class="radio-btn">
+              <input  type="radio" id="fifteen-percent"  name="tip" value="15">
+              <label for="fifteen-percent">15%</label>
+            </div>
+            <div class="radio-btn">
+              <input type="radio" id="twenty-five-percent"  name="tip" value="25">
+              <label for="twenty-five-percent">25%</label>
+            </div>
+            <div class="radio-btn">
+              <input type="radio" id="fifty-percent"  name="tip" value="50">
+              <label for="fifty-percent">50%</label>
+            </div>
+            <div class="radio-btn">
+              <input type="radio" id="customPercent" name="tip" value="">
+              <label for="customPercent" class="custom-tip">Custom</label>
+              <input class="radio-input__custom not-visible" type="number" id="customTip" name="customTip" min="0" max="100" step="1" value="" placeholder="0" aria-describedby="customTip-input-error" aria-label="Enter custom tip percentage">
+            </div>
+          </div>        
+        </fieldset>
+        <div class="input-group__people">
+          <label for="people" class="number__people">
+            <span>Number of People</span>
+            <span class="form__error-message not-visible"
+              id="people-input-error"></span>
+          </label>
+          <input  class="form__input" type="number" id="people" name="people"  min="2" max="100" step="1"  placeholder="0" aria-invalid="false" aria-describedby="people-input-error" required>
+        </div>
+        <div class="input-group__container">
+          <div class="input-group__total-tip">
+            <label for="tipAmount" class="tip__amount">
+              <span class="line-break">Tip Amount</span>/ person
+            </label>
+            <input class="form__input-total"  type="text" id="tipAmount" name="tipAmount" value="$0.00" readonly>
+          </div>
+          <div class="input-group__total-amount">
+            <label for="total" class="total__amount">
+              <span class="line-break">Total</span>/ person
+            </label>
+            <input class="form__input-total" type="text" id="total" name="total" value="$0.00" readonly>
+          </div>
+          <button type="reset" name="resetButton" class="btn btn-reset" disabled>Reset</button>
+        </div>
+      </form>        
+    </main>
+    <footer>
+      <div class="main-footer">
+        <p class="attribution">Thanks</p>
+      </div>
+    </footer>
+    <script src="/script.js"></script>
+  </body>
+</html>

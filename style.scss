@@ -1,0 +1,428 @@
+html {
+    box-sizing: border-box;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+  
+  body,
+  h1,
+  p,
+  fieldset {
+    margin: 0;
+    padding: 0;
+  }
+  
+  fieldset {
+    border: none;
+  }
+  
+  input {
+    font-family: "Space Mono", monospace;
+    display: block;
+  }
+  
+  label {
+    display: block;
+  }
+  
+  body {
+    background-color: hsl(185, 41%, 84%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Space Mono", monospace;
+    line-height: 1.48;
+    min-height: 100vh;
+  }
+  
+  img {
+    display: block;
+    max-width: 100%;
+  }
+  
+  a {
+    cursor: pointer;
+    text-decoration: none;
+  }
+  a:focus {
+    outline: auto 2px Highlight;
+    outline: auto 5px -webkit-focus-ring-color;
+  }
+  
+  .sr-only {
+    border: 0;
+    clip-path: inset(50%);
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+  
+  .not-visible {
+    height: 0;
+    visibility: hidden;
+  }
+  
+  .visible {
+    visibility: visible;
+  }
+  
+  .line-break::after {
+    content: "\a";
+    white-space: pre;
+  }
+  
+  .btn {
+    border-radius: 5px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: hsl(183, 100%, 15%);
+    background-color: hsl(172, 67%, 45%);
+    border: none;
+    cursor: pointer;
+    font-family: "Space Mono", monospace;
+    min-width: 100%;
+    padding: 9px 0;
+    text-transform: uppercase;
+  }
+  .btn:hover {
+    background-color: hsl(173, 61%, 77%);
+    transition: 0.25s ease-in;
+  }
+  .btn:focus {
+    outline: auto 2px Highlight;
+    outline: auto 5px -webkit-focus-ring-color;
+  }
+  .btn:disabled {
+    background-color: hsl(183, 79%, 24%);
+    color: rgba(0, 71, 75, 0.35);
+    pointer-events: none;
+  }
+  
+  .form {
+    border-radius: 25px;
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: 0px 32px 43px rgba(79, 166, 175, 0.200735);
+    margin-inline: auto;
+    max-width: 57.5rem;
+    padding: 0 1.5rem 2rem 1.5rem;
+  }
+  @media (min-width: 57.5rem) {
+    .form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      column-gap: 3rem;
+      padding: 2rem 2rem 2rem 3rem;
+    }
+  }
+  
+  .input-group__bill,
+  .form__radio-title,
+  .input-group__people {
+    font-size: 1rem;
+    font-weight: 700;
+    color: hsl(186, 14%, 43%);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+  
+  .form__radio-title {
+    margin-bottom: 1rem;
+  }
+  
+  @media (min-width: 57.5rem) {
+    .input-group__bill {
+      margin-bottom: 2.5rem;
+    }
+  }
+  
+  @media (min-width: 57.5rem) {
+    .input-group__people {
+      margin-bottom: 1rem;
+    }
+  }
+  
+  .bill__total,
+  .tip__percent,
+  .number__people {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+  .bill__total span:first-child,
+  .tip__percent span:first-child,
+  .number__people span:first-child {
+    align-self: flex-start;
+    padding-right: 1rem;
+  }
+  .bill__total .form__error-message,
+  .tip__percent .form__error-message,
+  .number__people .form__error-message {
+    align-self: flex-end;
+    color: hsl(13, 70%, 47%);
+  }
+  
+  .bill__total {
+    padding-top: 2rem;
+  }
+  @media (min-width: 57.5rem) {
+    .bill__total {
+      padding-top: 0.8125rem;
+    }
+  }
+  
+  .tip__percent {
+    margin-top: -6px;
+    justify-content: flex-end;
+  }
+  
+  #bill,
+  #people {
+    background-repeat: no-repeat;
+    background-position: 1rem;
+  }
+  
+  #bill {
+    background-image: url(images/icon-dollar.svg);
+  }
+  
+  #people {
+    background-image: url(images/icon-person.svg);
+  }
+  
+  .form__radio-group {
+    margin-bottom: 2rem;
+  }
+  @media (min-width: 57.5rem) {
+    .form__radio-group {
+      margin-bottom: 2.5rem;
+    }
+  }
+  
+  .radio-btn {
+    flex: 1 1 45%;
+  }
+  @media (min-width: 57.5rem) {
+    .radio-btn {
+      flex: 1 1 30%;
+    }
+  }
+  .radio-btn:last-child {
+    position: relative;
+  }
+  .radio-btn:last-child label {
+    background-color: hsl(189, 41%, 97%);
+    color: hsl(180, 18%, 40%);
+    z-index: 0;
+  }
+  .radio-btn label {
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(183, 100%, 15%);
+    display: grid;
+    grid-template-columns: auto;
+    min-height: 3rem;
+    place-items: center;
+    position: relative;
+  }
+  
+  .form__input,
+  .radio-input__custom {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: hsl(183, 100%, 15%);
+    border-radius: 5px;
+    background-color: hsl(189, 41%, 97%);
+    border: 2px solid transparent;
+    cursor: pointer;
+    padding: 4px 1rem 4px 0;
+    text-align: right;
+  }
+  
+  .form__input:focus,
+  .form__input:focus-within,
+  .radio-input__custom:focus,
+  .radio-input__custom:focus-within,
+  .form__input:hover,
+  .radio-input__custom:hover {
+    border: 2px solid hsl(172, 67%, 45%);
+    outline: transparent;
+  }
+  
+  .form__input.invalid,
+  .form__input.invalid:focus,
+  .form__input.invalid:focus-within,
+  .form__input.invalid:hover {
+    border: 2px solid hsl(13, 70%, 47%);
+    outline: transparent;
+  }
+  
+  .radio-input__custom {
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+  }
+  .radio-input__custom:hover {
+    cursor: pointer;
+    transition: 0.25s ease-in;
+  }
+  .radio-input__custom::placeholder {
+    color: hsl(183, 100%, 15%);
+    opacity: 1;
+  }
+  
+  input[type=radio] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: hsl(0, 0%, 100%);
+    margin: 0;
+    outline-style: none;
+  }
+  input[type=radio]:checked + label {
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+  }
+  input[type=radio]:checked + label.custom-tip {
+    position: absolute;
+    width: 100%;
+  }
+  input[type=radio]:focus + label, input[type=radio]:focus-within + label {
+    outline: auto 2px Highlight;
+    outline: auto 5px -webkit-focus-ring-color;
+  }
+  input[type=radio]:hover + label {
+    background-color: hsl(173, 61%, 77%);
+    color: hsl(183, 100%, 15%);
+    cursor: pointer;
+    transition: 0.25s ease-in;
+  }
+  
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  input[type=number] {
+    -webkit-appearance: textfield;
+    appearance: textfield;
+  }
+  
+  .input-group__total-tip,
+  .input-group__total-amount {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .input-group__total-tip {
+    margin-bottom: 22px;
+  }
+  
+  .input-group__total-amount {
+    margin-bottom: 32px;
+  }
+  @media (min-width: 57.5rem) {
+    .input-group__total-amount {
+      margin-bottom: 7.625rem;
+    }
+  }
+  
+  .tip__amount,
+  .total__amount {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: hsl(184, 14%, 65%);
+    flex-basis: 30%;
+    letter-spacing: -0.67px;
+  }
+  
+  .tip__amount span,
+  .total__amount span {
+    font-size: 1rem;
+    font-weight: 700;
+    color: hsl(0, 0%, 100%);
+  }
+  
+  .form__input-total {
+    font-size: 2rem;
+    font-weight: 700;
+    color: hsl(172, 67%, 45%);
+    background-color: inherit;
+    border: none;
+    flex-basis: 70%;
+    padding: 0;
+    text-align: right;
+    width: 50%;
+  }
+  @media (min-width: 57.5rem) {
+    .form__input-total {
+      font-size: 3rem;
+      letter-spacing: -1px;
+    }
+  }
+  
+  .input-group__container {
+    border-radius: 15px;
+    background-color: hsl(183, 100%, 15%);
+    padding: 1.5rem;
+  }
+  @media (min-width: 57.5rem) {
+    .input-group__container {
+      grid-column: 2;
+      grid-row: 1/4;
+      padding: 2.5rem;
+    }
+  }
+  
+  .radio-input__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .main-header {
+    margin-bottom: 2.5rem;
+    padding-top: 3.125rem;
+  }
+  @media (min-width: 57.5rem) {
+    .main-header {
+      margin-bottom: 5rem;
+      padding-top: 0;
+    }
+  }
+  
+  main {
+    width: 100%;
+  }
+  
+  .attribution {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: hsl(183, 100%, 15%);
+    padding: 0.5rem 0;
+    text-align: center;
+  }
+  .attribution a {
+    color: hsl(183, 100%, 15%);
+  }
+  .attribution a:hover {
+    color: hsl(172, 67%, 45%);
+  }
